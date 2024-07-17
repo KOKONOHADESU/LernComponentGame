@@ -2,13 +2,16 @@
 
 namespace Game
 {
-	// ウインドウモード設定
-	constexpr bool kWindowMode = true;
-	// ウインドウ名
-	const char* const kTitleText = "ゲーム名";
-	// ウインドウサイズ
-	constexpr int kScreenWidth = 640;
-	constexpr int kScreenHeight = 480;
+	// Windowモード設定
+	constexpr bool window_mode = true;
+
+	// Window名
+	const char* const title_text = "ゲーム名";
+
+	// Windowサイズ
+	constexpr int screen_width = 1280;
+	constexpr int screen_height = 720;
+
 	// カラーモード
-	constexpr int kColorDepth = 32;		// 32 or 16
+	constexpr int color_depth = 32;		// 32 or 16
 };

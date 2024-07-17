@@ -21,9 +21,10 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{2f022b6f-6f7d-47b8-9d67-56617cd838f4}</ProjectGuid>
-    <RootNamespace>DxLibtempVer_3</RootNamespace>
+    <ProjectGuid>{d3406be2-95e7-4dd3-90ff-eaa3e56f572b}</ProjectGuid>
+    <RootNamespace>Game</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Game</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -152,24 +153,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Pad.cpp" />
-    <ClCompile Include="SceneBase.cpp" />
-    <ClCompile Include="SceneMain.cpp" />
-    <ClCompile Include="SceneManager.cpp" />
-    <ClCompile Include="SceneMenuWindow.cpp" />
-    <ClCompile Include="SceneTitle.cpp" />
-    <ClCompile Include="SelectMenu.cpp" />
     <ClCompile Include="Vec2.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="game.h" />
-    <ClInclude Include="Pad.h" />
-    <ClInclude Include="SceneBase.h" />
-    <ClInclude Include="SceneMain.h" />
-    <ClInclude Include="SceneManager.h" />
-    <ClInclude Include="SceneMenuWindow.h" />
-    <ClInclude Include="SceneTitle.h" />
-    <ClInclude Include="SelectMenu.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="Vec2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
