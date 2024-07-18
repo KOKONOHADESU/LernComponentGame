@@ -155,6 +155,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Scene\TestScene.cpp" />
     <ClCompile Include="Util\InputState.cpp" />
     <ClCompile Include="MyDebug\DebugText.cpp" />
     <ClCompile Include="main.cpp" />
@@ -164,6 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
+    <ClInclude Include="Scene\TestScene.h" />
     <ClInclude Include="Util\InputState.h" />
     <ClInclude Include="MyDebug\DebugText.h" />
     <ClInclude Include="Scene\TitleScene.h" />

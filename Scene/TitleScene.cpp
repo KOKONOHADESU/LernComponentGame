@@ -30,6 +30,6 @@ void TitleScene::Update()
 // 描画
 void TitleScene::Draw()
 {
-	// デバッグテキスト
+	// 現在のシーン名を表示
 	DebugText::AddLog("TitleScene");
 }

@@ -1,4 +1,6 @@
 #pragma once
+#include <map>
+#include <string>
 #include "SceneBase.h"
 
 /// <summary>
@@ -38,4 +40,20 @@ public:
 	/// 描画
 	/// </summary>
 	void Draw() override final;
+
+private:
+	// シーンの種類
+	enum class SceneItem
+	{
+		TITLE,	// タイトル
+		TEST,	// テスト
+
+		MAX		// 最大数
+	};
+
+private:
+	std::map<SceneItem, std::string> m_scenes;
+
+	// 選択中のインデックス
+	int m_selectIndex;
 };
