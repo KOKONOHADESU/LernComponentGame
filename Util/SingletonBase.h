@@ -63,5 +63,5 @@ private:
 	static T* m_instance;
 };
 
-// インスタンスの初期化
+// インスタンスの実体化
 template <typename T> T* SingletonBase<T>::m_instance;

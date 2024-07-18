@@ -64,7 +64,7 @@ public:
 	/// </summary>
 	/// <param name="string">出力する文字列</param>
 	/// <param name="color">文字の色</param>
-	static void AddLog(const std::string& string, unsigned int color = 0xffffff);
+	static void AddLog(const std::string& string, const unsigned int color = 0xffffff);
 
 	/// <summary>
 	/// ログの追加(文字と数字)
@@ -75,7 +75,7 @@ public:
 	/// <typeparam name="N">変数の数</typeparam>
 	/// <param name="color">文字の色</param>
 	template <typename T, size_t N>
-	static void AddLog(const std::string& string, const T(&array)[N], unsigned int color = 0xffffff)
+	static void AddLog(const std::string& string, const T(&array)[N], const unsigned int color = 0xffffff)
 	{
 #ifdef _DEBUG
 		// ログデータの作成
@@ -103,9 +103,13 @@ public:
 	}
 
 private:
+	// ログデータ
 	struct LogData
 	{
+		// 文字列
 		std::string str;
+
+		// 文字の色
 		unsigned int color = 0xffffff;
 	};
 

@@ -1,5 +1,8 @@
 #include "Application.h"
 #include "MyDebug/DebugText.h"
+#include "Util/InputState.h"
+#include "Scene/TransporterScene.h"
+#include "Scene/TitleScene.h"
 #include <DxLib.h>
 #include <string>
 
@@ -21,6 +24,7 @@ namespace
 	// fps
 	constexpr int fps = 60;
 }
+
 
 // 初期化
 bool Application::Init()
@@ -56,6 +60,9 @@ bool Application::Init()
 	// デバッグテキストの初期化
 	DebugText::Init();
 
+	// 入力状態の初期化
+	InputState::Init();
+
 	// ダブルバッファモード
 	// 裏画面に描画
 	SetDrawScreen(DX_SCREEN_BACK);
@@ -67,6 +74,17 @@ bool Application::Init()
 // 実行
 void Application::Run()
 {
+	// シーンマネージャの生成
+	m_sceneManager = std::make_shared<SceneManager>();
+
+// デバッグ時
+#ifdef _DEBUG
+	m_sceneManager->PushScene(std::make_shared<TransporterScene>(m_sceneManager));
+// リリース時
+#else
+	m_sceneManager->PushScene(std::make_shared<TitleScene>(m_sceneManager));
+#endif
+
 	// 異常が起きた時に終了
 	while (ProcessMessage() == 0)
 	{
@@ -79,6 +97,14 @@ void Application::Run()
 		// デバッグテキストのクリア
 		DebugText::ClearLog();
 
+		// 入力状態の更新
+		InputState::Update();
+
+		// シーンの更新
+		m_sceneManager->Update();
+
+		// シーンの描画
+		m_sceneManager->Draw();
 
 		// デバッグテキストの描画
 		DebugText::DrawLog();
@@ -106,6 +132,9 @@ void Application::Run()
 // 終了
 void Application::End()
 {
+	// デバッグテキストの終了処理
+	DebugText::End();
+
 	// ＤＸライブラリ使用の終了処理
 	DxLib_End();
 }

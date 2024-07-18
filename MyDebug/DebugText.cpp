@@ -60,7 +60,7 @@ void DebugText::DrawLog()
 		// 半透明の背景を文字の横幅、立幅に合わせて描画
 		int width = 0, height = 0, line = 0;
 		SetDrawBlendMode(DX_BLENDMODE_ALPHA, draw_back_alpha);
-		GetDrawStringSizeToHandle(&width, &height, &line, log.str.c_str(), log.str.size(), m_fontHandle);
+		GetDrawStringSizeToHandle(&width, &height, &line, log.str.c_str(), static_cast<int>(log.str.size()), m_fontHandle);
 		DrawBox(draw_width, (draw_height_interval * m_logCount) + draw_start_height, draw_width + width, (draw_height_interval * m_logCount) + height + draw_start_height, draw_back_color, true);
 		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 
@@ -80,7 +80,7 @@ void DebugText::DrawLog()
 }
 
 // ログの追加
-void DebugText::AddLog(const std::string& string, unsigned int color)
+void DebugText::AddLog(const std::string& string, const unsigned int color)
 {
 // デバッグ時のみ
 #ifdef _DEBUG
