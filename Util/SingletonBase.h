@@ -63,34 +63,5 @@ private:
 	static T* m_instance;
 };
 
+// インスタンスの初期化
 template <typename T> T* SingletonBase<T>::m_instance;
-
-//protected:
-//    SingletonBase() {}
-//public:
-//    virtual ~SingletonBase() {}
-//
-//    // コピー禁止
-//    SingletonBase(SingletonBase const&) = delete;
-//
-//    // 代入禁止
-//    SingletonBase& operator=(SingletonBase const&) = delete;
-//
-//public:
-//    static std::shared_ptr<T> GetInstance()
-//    {
-//        auto ret_ptr = m_instance.lock();
-//        if (!ret_ptr)
-//        {
-//            ret_ptr = std::shared_ptr<T>(new T{});
-//            m_instance = std::weak_ptr<T>(ret_ptr);
-//            return ret_ptr;
-//        }
-//
-//        return m_instance.lock();
-//    }
-//
-//private:
-//    static std::weak_ptr<T> m_instance;
-
-//template <typename T> std::weak_ptr<T>  SingletonBase<T>::m_instance;

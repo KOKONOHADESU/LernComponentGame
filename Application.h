@@ -1,5 +1,5 @@
 #pragma once
-#include "SingletonBase.h"
+#include "Util/SingletonBase.h"
 
 /// <summary>
 /// アプリケーションを管理するシングルトンクラス
@@ -7,7 +7,13 @@
 class Application : public SingletonBase<Application>
 {
 public:
-//	friend class SingletonBase<Application>;
+	// SingletonBaseクラスでのみインスタンス生成を許可する
+	friend class SingletonBase<Application>;
+
+	/// <summary>
+	/// デストラクタ
+	/// </summary>
+	~Application() {}
 
 	/// <summary>
 	/// アプリケーションの初期化
@@ -26,4 +32,8 @@ public:
 	void End();
 
 private:
+	/// <summary>
+	/// コンストラクタ
+	/// </summary>
+	Application(){}
 };
