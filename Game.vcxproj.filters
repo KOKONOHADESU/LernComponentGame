@@ -9,33 +9,36 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="ソース ファイル\Util">
+      <UniqueIdentifier>{36e8e005-2ef3-4b64-91f5-c7712656170f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene">
+      <UniqueIdentifier>{bfa8f8eb-6ab9-492f-a439-93c33f2edecc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Debug">
+      <UniqueIdentifier>{1c865df6-22a2-4639-a34e-9d65a3c6cab5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Vec2.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="Application.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="SingletonBase.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="MyDebug\DebugText.cpp">
+      <Filter>ソース ファイル\Debug</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>ソース ファイル</Filter>
+    <ClInclude Include="Util\SingletonBase.h">
+      <Filter>ソース ファイル\Util</Filter>
     </ClInclude>
-    <ClInclude Include="Vec2.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SingletonBase.h">
-      <Filter>ソース ファイル</Filter>
+    <ClInclude Include="MyDebug\DebugText.h">
+      <Filter>ソース ファイル\Debug</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

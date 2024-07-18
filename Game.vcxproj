@@ -153,15 +153,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="MyDebug\DebugText.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="SingletonBase.cpp" />
-    <ClCompile Include="Vec2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
-    <ClInclude Include="Game.h" />
-    <ClInclude Include="SingletonBase.h" />
-    <ClInclude Include="Vec2.h" />
+    <ClInclude Include="MyDebug\DebugText.h" />
+    <ClInclude Include="Util\SingletonBase.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

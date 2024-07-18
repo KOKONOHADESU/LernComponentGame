@@ -1,4 +1,5 @@
 #include "Application.h"
+#include "MyDebug/DebugText.h"
 #include <DxLib.h>
 #include <string>
 
@@ -52,6 +53,9 @@ bool Application::Init()
 		return false;
 	}
 
+	// デバッグテキストの初期化
+	DebugText::Init();
+
 	// ダブルバッファモード
 	// 裏画面に描画
 	SetDrawScreen(DX_SCREEN_BACK);
@@ -72,8 +76,12 @@ void Application::Run()
 		// 画面のクリア
 		ClearDrawScreen();
 
-		// ここに処理を書く
+		// デバッグテキストのクリア
+		DebugText::ClearLog();
 
+
+		// デバッグテキストの描画
+		DebugText::DrawLog();
 
 		// 裏画面を表画面を入れ替える
 		ScreenFlip();
