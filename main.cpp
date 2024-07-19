@@ -12,7 +12,7 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_  HINSTANCE hPrevInstance, 
 
 	// リークが発生しているメモリ確保回数を引数にすることで、
 	// その個所にデバッグブレークをかけてくれる
-//	_CrtSetBreakAlloc(134);
+//	_CrtSetBreakAlloc(136);
 #endif
 
 	// アプリケーションのインスタンスを取得

@@ -28,9 +28,9 @@ namespace Debug
 	// 終了処理
 	void Text::End()
 	{
-		// デバッグ時のみ
+// デバッグ時のみ
 #ifdef _DEBUG
-	// ログのクリア
+		// ログのクリア
 		ClearLog();
 
 		// フォントを削除

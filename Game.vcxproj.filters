@@ -21,6 +21,12 @@
     <Filter Include="ソース ファイル\System">
       <UniqueIdentifier>{13df54d7-6a6a-4241-b01c-feb5a33365fb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Resource">
+      <UniqueIdentifier>{119aeb92-5637-41d6-a329-b1d09af34a48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Resource\Type">
+      <UniqueIdentifier>{8c2e4fca-273b-472b-a01b-f0cbdc3a6651}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -52,6 +58,9 @@
     </ClCompile>
     <ClCompile Include="System\Window.cpp">
       <Filter>ソース ファイル\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Resource\ImageManager.cpp">
+      <Filter>ソース ファイル\Resource</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -87,6 +96,12 @@
     </ClInclude>
     <ClInclude Include="System\Window.h">
       <Filter>ソース ファイル\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource\ImageManager.h">
+      <Filter>ソース ファイル\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource\Type\ImageType.h">
+      <Filter>ソース ファイル\Resource\Type</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

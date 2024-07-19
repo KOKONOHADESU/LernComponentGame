@@ -155,6 +155,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Resource\ImageManager.cpp" />
     <ClCompile Include="Scene\Load.cpp" />
     <ClCompile Include="Scene\Test.cpp" />
     <ClCompile Include="Util\InputState.cpp" />
@@ -167,6 +168,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
+    <ClInclude Include="Resource\Type\ImageType.h" />
+    <ClInclude Include="Resource\ImageManager.h" />
     <ClInclude Include="Scene\Load.h" />
     <ClInclude Include="Scene\Test.h" />
     <ClInclude Include="Util\InputState.h" />
