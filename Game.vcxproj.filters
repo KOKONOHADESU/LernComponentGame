@@ -26,22 +26,25 @@
     <ClCompile Include="Application.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="MyDebug\DebugText.cpp">
+    <ClCompile Include="MyDebug\Text.cpp">
       <Filter>ソース ファイル\Debug</Filter>
     </ClCompile>
-    <ClCompile Include="Scene\SceneManager.cpp">
+    <ClCompile Include="Scene\Manager.cpp">
       <Filter>ソース ファイル\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="Scene\TitleScene.cpp">
+    <ClCompile Include="Scene\Title.cpp">
       <Filter>ソース ファイル\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="Scene\TransporterScene.cpp">
+    <ClCompile Include="Scene\Transporter.cpp">
       <Filter>ソース ファイル\Scene</Filter>
     </ClCompile>
     <ClCompile Include="Util\InputState.cpp">
       <Filter>ソース ファイル\Util</Filter>
     </ClCompile>
-    <ClCompile Include="Scene\TestScene.cpp">
+    <ClCompile Include="Scene\Test.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Load.cpp">
       <Filter>ソース ファイル\Scene</Filter>
     </ClCompile>
   </ItemGroup>
@@ -49,28 +52,31 @@
     <ClInclude Include="Application.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="MyDebug\DebugText.h">
+    <ClInclude Include="MyDebug\Text.h">
       <Filter>ソース ファイル\Debug</Filter>
     </ClInclude>
     <ClInclude Include="Util\SingletonBase.h">
       <Filter>ソース ファイル\Util</Filter>
     </ClInclude>
-    <ClInclude Include="Scene\SceneBase.h">
+    <ClInclude Include="Scene\Base.h">
       <Filter>ソース ファイル\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="Scene\SceneManager.h">
+    <ClInclude Include="Scene\Manager.h">
       <Filter>ソース ファイル\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="Scene\TitleScene.h">
+    <ClInclude Include="Scene\Title.h">
       <Filter>ソース ファイル\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="Scene\TransporterScene.h">
+    <ClInclude Include="Scene\Transporter.h">
       <Filter>ソース ファイル\Scene</Filter>
     </ClInclude>
     <ClInclude Include="Util\InputState.h">
       <Filter>ソース ファイル\Util</Filter>
     </ClInclude>
-    <ClInclude Include="Scene\TestScene.h">
+    <ClInclude Include="Scene\Test.h">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Load.h">
       <Filter>ソース ファイル\Scene</Filter>
     </ClInclude>
   </ItemGroup>

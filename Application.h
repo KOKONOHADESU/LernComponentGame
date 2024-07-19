@@ -1,7 +1,7 @@
 #pragma once
 #include <memory>
 #include "Util/SingletonBase.h"
-#include "Scene/SceneManager.h"
+#include "Scene/Manager.h"
 
 /// <summary>
 /// アプリケーションを管理するシングルトンクラス
@@ -41,5 +41,5 @@ private:
 
 private:
 	// シーンマネージャ
-	std::shared_ptr<SceneManager> m_sceneManager;
+	std::shared_ptr<Scene::Manager> m_sceneManager;
 };

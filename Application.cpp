@@ -1,8 +1,8 @@
 #include "Application.h"
-#include "MyDebug/DebugText.h"
+#include "MyDebug/Text.h"
 #include "Util/InputState.h"
-#include "Scene/TransporterScene.h"
-#include "Scene/TitleScene.h"
+#include "Scene/Transporter.h"
+#include "Scene/Title.h"
 #include <DxLib.h>
 #include <string>
 
@@ -58,7 +58,7 @@ bool Application::Init()
 	}
 
 	// デバッグテキストの初期化
-	DebugText::Init();
+	Debug::Text::Init();
 
 	// 入力状態の初期化
 	InputState::Init();
@@ -75,11 +75,11 @@ bool Application::Init()
 void Application::Run()
 {
 	// シーンマネージャの生成
-	m_sceneManager = std::make_shared<SceneManager>();
+	m_sceneManager = std::make_shared<Scene::Manager>();
 
 // デバッグ時
 #ifdef _DEBUG
-	m_sceneManager->PushScene(std::make_shared<TransporterScene>(m_sceneManager));
+	m_sceneManager->Scene::Manager::PushScene(std::make_shared<Scene::Transporter>(m_sceneManager));
 // リリース時
 #else
 	m_sceneManager->PushScene(std::make_shared<TitleScene>(m_sceneManager));
@@ -95,7 +95,7 @@ void Application::Run()
 		ClearDrawScreen();
 
 		// デバッグテキストのクリア
-		DebugText::ClearLog();
+		Debug::Text::ClearLog();
 
 		// 入力状態の更新
 		InputState::Update();
@@ -107,7 +107,7 @@ void Application::Run()
 		m_sceneManager->Draw();
 
 		// デバッグテキストの描画
-		DebugText::DrawLog();
+		Debug::Text::DrawLog();
 
 		// 裏画面を表画面を入れ替える
 		ScreenFlip();
@@ -133,7 +133,7 @@ void Application::Run()
 void Application::End()
 {
 	// デバッグテキストの終了処理
-	DebugText::End();
+	Debug::Text::End();
 
 	// ＤＸライブラリ使用の終了処理
 	DxLib_End();

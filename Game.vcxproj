@@ -155,23 +155,25 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
-    <ClCompile Include="Scene\TestScene.cpp" />
+    <ClCompile Include="Scene\Load.cpp" />
+    <ClCompile Include="Scene\Test.cpp" />
     <ClCompile Include="Util\InputState.cpp" />
-    <ClCompile Include="MyDebug\DebugText.cpp" />
+    <ClCompile Include="MyDebug\Text.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Scene\TitleScene.cpp" />
-    <ClCompile Include="Scene\SceneManager.cpp" />
-    <ClCompile Include="Scene\TransporterScene.cpp" />
+    <ClCompile Include="Scene\Title.cpp" />
+    <ClCompile Include="Scene\Manager.cpp" />
+    <ClCompile Include="Scene\Transporter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
-    <ClInclude Include="Scene\TestScene.h" />
+    <ClInclude Include="Scene\Load.h" />
+    <ClInclude Include="Scene\Test.h" />
     <ClInclude Include="Util\InputState.h" />
-    <ClInclude Include="MyDebug\DebugText.h" />
-    <ClInclude Include="Scene\TitleScene.h" />
-    <ClInclude Include="Scene\SceneManager.h" />
-    <ClInclude Include="Scene\SceneBase.h" />
-    <ClInclude Include="Scene\TransporterScene.h" />
+    <ClInclude Include="MyDebug\Text.h" />
+    <ClInclude Include="Scene\Title.h" />
+    <ClInclude Include="Scene\Manager.h" />
+    <ClInclude Include="Scene\Base.h" />
+    <ClInclude Include="Scene\Transporter.h" />
     <ClInclude Include="Util\SingletonBase.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
