@@ -1,11 +1,11 @@
 #pragma once
 #include "Base.h"
 
-/// <summary>
-/// ロードシーン
-/// </summary>
 namespace Scene
 {
+	/// <summary>
+	/// ロードシーン
+	/// </summary>
 	class Load final : public Scene::Base
 	{
 	public:
@@ -39,5 +39,9 @@ namespace Scene
 		/// 描画
 		/// </summary>
 		void Draw() override final;
+
+	private:
+		// ロード画面が表示されている時間
+		int m_time;
 	};
 }

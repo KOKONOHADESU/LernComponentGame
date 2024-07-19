@@ -27,12 +27,12 @@ namespace Scene
 	// 更新
 	void Title::Update()
 	{
+		// 現在のシーン名を表示
+		Debug::Text::AddLog("TitleScene");
 	}
 
 	// 描画
 	void Title::Draw()
 	{
-		// 現在のシーン名を表示
-		Debug::Text::AddLog("TitleScene");
 	}
 }

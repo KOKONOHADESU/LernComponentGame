@@ -47,6 +47,9 @@ namespace Scene
 	// 更新
 	void Transporter::Update()
 	{
+		// 現在のシーン名を表示
+		Debug::Text::AddLog("TransporterScene");
+
 		// 選択肢を上下で切り替え
 		int sceneItemTotalValue = static_cast<int>(SceneItem::MAX);
 		if (InputState::IsTriggered(InputType::UP))
@@ -84,9 +87,6 @@ namespace Scene
 	// 描画
 	void Transporter::Draw()
 	{
-		// 現在のシーン名を表示
-		Debug::Text::AddLog("TransporterScene");
-
 		for (auto& scene : m_scenes)
 		{
 			// シーン名を表示

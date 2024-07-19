@@ -1,6 +1,7 @@
 #include "Application.h"
 #include "MyDebug/Text.h"
 #include "Util/InputState.h"
+#include "System/Window.h"
 #include "Scene/Transporter.h"
 #include "Scene/Title.h"
 #include <DxLib.h>
@@ -8,19 +9,6 @@
 
 namespace
 {
-	// 画面サイズ
-	constexpr int window_width = 1920;
-	constexpr int window_height = 1080;
-
-	// ウィンドウタイトル
-	const std::string window_title = "";
-
-	// カラービット数
-	constexpr int color_depth = 32;
-
-	// ウィンドウモード
-	constexpr bool window_mode = true;
-
 	// fps
 	constexpr int fps = 60;
 }
@@ -29,26 +17,12 @@ namespace
 // 初期化
 bool Application::Init()
 {
-	// Windowモード設定
-	ChangeWindowMode(window_mode);
-
-	// Window名設定
-	SetMainWindowText(window_title.c_str());
-
-	// 画面サイズの設定
-	SetGraphMode(window_width, window_height, color_depth);
-
-	// ゲーム中にウィンドウモードを切り替えてもグラフィックハンドルをリセットしない
-	SetChangeScreenModeGraphicsSystemResetFlag(true);
-
-	// ほかのウィンドウを選択していても動くようにする
-	SetAlwaysRunFlag(true);
-
-	// ウィンドウのサイズを変更可能にする
-	SetWindowSizeChangeEnableFlag(true);
+	// ウィンドウの設定
+	const auto& window = System::Window::GetInstance();
+	window->Init();
 
 	// 非同期読み込み設定に変更
-//	SetUseASyncLoadFlag(true);
+	SetUseASyncLoadFlag(true);
 
 	// ＤＸライブラリ初期化処理
 	if (DxLib_Init() == -1)
@@ -79,7 +53,7 @@ void Application::Run()
 
 // デバッグ時
 #ifdef _DEBUG
-	m_sceneManager->Scene::Manager::PushScene(std::make_shared<Scene::Transporter>(m_sceneManager));
+	m_sceneManager->PushScene(std::make_shared<Scene::Transporter>(m_sceneManager));
 // リリース時
 #else
 	m_sceneManager->PushScene(std::make_shared<TitleScene>(m_sceneManager));
@@ -134,6 +108,10 @@ void Application::End()
 {
 	// デバッグテキストの終了処理
 	Debug::Text::End();
+
+	// ウィンドウの削除
+	const auto& window = System::Window::GetInstance();
+	window->DestroyInstance();
 
 	// ＤＸライブラリ使用の終了処理
 	DxLib_End();

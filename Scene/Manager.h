@@ -5,13 +5,14 @@
 
 namespace Scene
 {
+	// プロトタイプ宣言
 	class Base;
 
 	/// <summary>
 	/// シーンを管理するクラス
 	/// シーンの切り替えやシーンの追加など
 	/// </summary>
-	class Manager
+	class Manager : public std::enable_shared_from_this<Manager>
 	{
 	public:
 		/// <summary>
@@ -58,8 +59,17 @@ namespace Scene
 		/// </summary>
 		void ClearScene();
 
+		/// <summary>
+		/// 非同期読み込みのチェック
+		/// 読み込み中の場合、ロード画面を上に積む
+		/// </summary>
+		void CheckAsyncLoad();
+
 	private:
 		// シーンのリスト
 		std::list<std::shared_ptr<Scene::Base>> m_scenes;
+
+		// ロード画面が存在するか
+		bool m_isLoadScene;
 	};
 }
