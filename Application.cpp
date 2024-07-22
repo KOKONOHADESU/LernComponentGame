@@ -109,6 +109,9 @@ void Application::End()
 	// デバッグテキストの終了処理
 	Debug::Text::End();
 
+	// シーンを全て削除
+	m_sceneManager->ClearScene();
+
 	// ウィンドウの削除
 	const auto& window = System::Window::GetInstance();
 	window->DestroyInstance();
