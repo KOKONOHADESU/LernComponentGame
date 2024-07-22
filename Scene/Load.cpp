@@ -39,12 +39,18 @@ namespace Scene
 		// 現在のシーン名を表示
 		Debug::Text::AddLog("LoadScene");
 
+		// 経過時間を表示
+		Debug::Text::AddLog("Time", { m_time });
+
 		// 非同期代読み込みを行っていなく、
 		// ロード画面が表示される最低時間を過ぎたら
-		// ロード画面を削除
 		if (GetASyncLoadNum() <= 0 && 
 			m_time++ >= lowest_time_load_scene)
 		{
+			// ロード画面を削除することを通知
+			m_manager->SetLoadSceneFlag(false);
+
+			// ロード画面を削除
 			m_manager->PopScene();
 		}
 	}

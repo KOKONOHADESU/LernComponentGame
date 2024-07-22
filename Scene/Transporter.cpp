@@ -5,6 +5,7 @@
 #include "../MyDebug/Text.h"
 #include "../Util/InputState.h"
 #include <DxLib.h>
+#include <cassert>
 
 namespace
 {

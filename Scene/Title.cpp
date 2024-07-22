@@ -1,5 +1,7 @@
 #include "Title.h"
 #include "../MyDebug/Text.h"
+#include <DxLib.h>
+#include <cassert>
 
 namespace Scene
 {

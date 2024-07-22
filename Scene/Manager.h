@@ -65,6 +65,12 @@ namespace Scene
 		/// </summary>
 		void CheckAsyncLoad();
 
+		/// <summary>
+		/// ロード画面の存在フラグの設定 
+		/// </summary>
+		/// <param name="flag">ロード画面の存在フラグ</param>
+		void SetLoadSceneFlag(const bool flag) { m_isLoadScene = flag; }
+
 	private:
 		// シーンのリスト
 		std::list<std::shared_ptr<Scene::Base>> m_scenes;
