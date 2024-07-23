@@ -1,6 +1,7 @@
 #include "Application.h"
 #include "MyDebug/Text.h"
 #include "Util/InputState.h"
+#include "Resource/ImageManager.h"
 #include "System/Window.h"
 #include "Scene/Transporter.h"
 #include "Scene/Title.h"
@@ -18,8 +19,7 @@ namespace
 bool Application::Init()
 {
 	// ウィンドウの設定
-	const auto& window = System::Window::GetInstance();
-	window->Init();
+	System::Window::GetInstance()->Init();
 
 	// 非同期読み込み設定に変更
 	SetUseASyncLoadFlag(true);
@@ -112,9 +112,11 @@ void Application::End()
 	// シーンを全て削除
 	m_sceneManager->ClearScene();
 
+	// 画像リソース管理の削除
+	Resource::ImageManager::GetInstance()->DeleteInstance();
+
 	// ウィンドウの削除
-	const auto& window = System::Window::GetInstance();
-	window->DestroyInstance();
+	System::Window::GetInstance()->DeleteInstance();
 
 	// ＤＸライブラリ使用の終了処理
 	DxLib_End();

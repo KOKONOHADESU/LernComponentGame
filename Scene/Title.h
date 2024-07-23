@@ -1,5 +1,6 @@
 #pragma once
 #include "Base.h"
+#include "../Resource/Image.h"
 
 namespace Scene
 {
@@ -39,5 +40,8 @@ namespace Scene
 		/// •`‰æ
 		/// </summary>
 		void Draw() override final;
+
+	private:
+		std::shared_ptr<Resource::Image> m_image;
 	};
 }

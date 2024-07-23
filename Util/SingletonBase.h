@@ -28,7 +28,7 @@ public:
 	/// <summary>
 	/// インスタンスを破棄する
 	/// </summary>
-	static void DestroyInstance()
+	static void DeleteInstance()
 	{
 		// インスタンスがある場合は破棄する
 		if (m_instance)

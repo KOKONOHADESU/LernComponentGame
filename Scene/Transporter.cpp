@@ -79,7 +79,7 @@ namespace Scene
 
 				// ƒ[ƒh
 			case SceneItem::LOAD:
-				m_manager->ChangeScene(std::make_shared<Scene::Load>(m_manager));
+				m_manager->PushScene(std::make_shared<Scene::Load>(m_manager, true));
 				return;
 			}
 		}

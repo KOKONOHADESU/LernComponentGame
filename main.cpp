@@ -32,7 +32,7 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_  HINSTANCE hPrevInstance, 
 	app->End();
 
 	// アプリケーションの解放
-	app->DestroyInstance();
+	app->DeleteInstance();
 
 	// ソフトの終了 
 	return 0;					

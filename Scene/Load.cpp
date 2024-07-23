@@ -1,5 +1,6 @@
 #include "Load.h"
 #include "../MyDebug/Text.h"
+#include "../Util/InputState.h"
 #include <DxLib.h>
 
 namespace
@@ -12,8 +13,9 @@ namespace
 namespace Scene
 {
 	// コンストラクタ
-	Load::Load(const std::shared_ptr<Scene::Manager>& manager) :
+	Load::Load(const std::shared_ptr<Scene::Manager>& manager, const bool isEternal) :
 		Scene::Base(manager),
+		m_isDrawEternal(isEternal),
 		m_time(0)
 	{
 	}
@@ -39,19 +41,33 @@ namespace Scene
 		// 現在のシーン名を表示
 		Debug::Text::AddLog("LoadScene");
 
-		// 経過時間を表示
-		Debug::Text::AddLog("Time", { m_time });
-
-		// 非同期代読み込みを行っていなく、
-		// ロード画面が表示される最低時間を過ぎたら
-		if (GetASyncLoadNum() <= 0 && 
-			m_time++ >= lowest_time_load_scene)
+		// 永続表示でない場合
+		if (!m_isDrawEternal)
 		{
-			// ロード画面を削除することを通知
-			m_manager->SetLoadSceneFlag(false);
+			// 経過時間を表示
+			Debug::Text::AddLog("Time", { m_time });
 
-			// ロード画面を削除
-			m_manager->PopScene();
+			// 非同期代読み込みを行っていなく、
+			// ロード画面が表示される最低時間を過ぎたら
+			if (GetASyncLoadNum() <= 0 &&
+				m_time++ >= lowest_time_load_scene)
+			{
+				// ロード画面を削除することを通知
+				m_manager->SetLoadSceneFlag(false);
+
+				// ロード画面を削除
+				m_manager->PopScene();
+			}
+		}
+		// 永続表示の場合
+		else
+		{
+			// 戻るボタンが押されたら
+			if (InputState::IsTriggered(InputType::BACK))
+			{
+				// ロード画面を削除
+				m_manager->PopScene();
+			}
 		}
 	}
 

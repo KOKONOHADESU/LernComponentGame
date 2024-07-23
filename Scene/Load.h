@@ -13,7 +13,8 @@ namespace Scene
 		/// コンストラクタ
 		/// </summary>
 		/// <param name="manager">シーンマネージャのインスタンス</param>
-		Load(const std::shared_ptr<Scene::Manager>& manager);
+		/// <param name="isEternal">永続表示か(デバッグ用)</param>
+		Load(const std::shared_ptr<Scene::Manager>& manager, const bool isDrawEternal = false);
 
 		/// <summary>
 		/// デストラクタ
@@ -43,5 +44,8 @@ namespace Scene
 	private:
 		// ロード画面が表示されている時間
 		int m_time;
+
+		// ロード画面が永続表示か
+		bool m_isDrawEternal;
 	};
 }
