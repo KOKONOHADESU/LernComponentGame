@@ -24,6 +24,12 @@
     <Filter Include="ソース ファイル\Resource">
       <UniqueIdentifier>{119aeb92-5637-41d6-a329-b1d09af34a48}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Component">
+      <UniqueIdentifier>{c783cb5b-b440-41b0-8e29-85be01a61dac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Object">
+      <UniqueIdentifier>{144b3d3b-fd0a-4dd4-b97a-7288a2ad7a51}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -32,82 +38,94 @@
     <ClCompile Include="Application.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="MyDebug\Text.cpp">
+    <ClCompile Include="MyDebug\DebugText.cpp">
       <Filter>ソース ファイル\Debug</Filter>
     </ClCompile>
-    <ClCompile Include="Scene\Manager.cpp">
+    <ClCompile Include="Scene\SceneManager.cpp">
       <Filter>ソース ファイル\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="Scene\Title.cpp">
+    <ClCompile Include="Scene\TitleScene.cpp">
       <Filter>ソース ファイル\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="Scene\Transporter.cpp">
+    <ClCompile Include="Scene\TransporterScene.cpp">
       <Filter>ソース ファイル\Scene</Filter>
     </ClCompile>
     <ClCompile Include="Util\InputState.cpp">
       <Filter>ソース ファイル\Util</Filter>
     </ClCompile>
-    <ClCompile Include="Scene\Test.cpp">
+    <ClCompile Include="Scene\TestScene.cpp">
       <Filter>ソース ファイル\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="Scene\Load.cpp">
+    <ClCompile Include="Scene\LoadScene.cpp">
       <Filter>ソース ファイル\Scene</Filter>
     </ClCompile>
     <ClCompile Include="System\Window.cpp">
       <Filter>ソース ファイル\System</Filter>
     </ClCompile>
-    <ClCompile Include="Resource\ImageManager.cpp">
+    <ClCompile Include="Resource\ImageResourceManager.cpp">
       <Filter>ソース ファイル\Resource</Filter>
     </ClCompile>
-    <ClCompile Include="Resource\Image.cpp">
+    <ClCompile Include="Resource\ImageResource.cpp">
       <Filter>ソース ファイル\Resource</Filter>
     </ClCompile>
-    <ClCompile Include="Resource\Base.cpp">
+    <ClCompile Include="Resource\ResourceBase.cpp">
       <Filter>ソース ファイル\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\ObjectBase.cpp">
+      <Filter>ソース ファイル\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\ComponentBase.cpp">
+      <Filter>ソース ファイル\Component</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="MyDebug\Text.h">
+    <ClInclude Include="MyDebug\DebugText.h">
       <Filter>ソース ファイル\Debug</Filter>
     </ClInclude>
     <ClInclude Include="Util\SingletonBase.h">
       <Filter>ソース ファイル\Util</Filter>
     </ClInclude>
-    <ClInclude Include="Scene\Base.h">
+    <ClInclude Include="Scene\SceneBase.h">
       <Filter>ソース ファイル\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="Scene\Manager.h">
+    <ClInclude Include="Scene\SceneManager.h">
       <Filter>ソース ファイル\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="Scene\Title.h">
+    <ClInclude Include="Scene\TitleScene.h">
       <Filter>ソース ファイル\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="Scene\Transporter.h">
+    <ClInclude Include="Scene\TransporterScene.h">
       <Filter>ソース ファイル\Scene</Filter>
     </ClInclude>
     <ClInclude Include="Util\InputState.h">
       <Filter>ソース ファイル\Util</Filter>
     </ClInclude>
-    <ClInclude Include="Scene\Test.h">
+    <ClInclude Include="Scene\TestScene.h">
       <Filter>ソース ファイル\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="Scene\Load.h">
+    <ClInclude Include="Scene\LoadScene.h">
       <Filter>ソース ファイル\Scene</Filter>
     </ClInclude>
     <ClInclude Include="System\Window.h">
       <Filter>ソース ファイル\System</Filter>
     </ClInclude>
-    <ClInclude Include="Resource\ImageManager.h">
+    <ClInclude Include="Resource\ImageResourceManager.h">
       <Filter>ソース ファイル\Resource</Filter>
     </ClInclude>
-    <ClInclude Include="Resource\Image.h">
+    <ClInclude Include="Resource\ImageResource.h">
       <Filter>ソース ファイル\Resource</Filter>
     </ClInclude>
-    <ClInclude Include="Resource\Base.h">
+    <ClInclude Include="Resource\ResourceBase.h">
       <Filter>ソース ファイル\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\ComponentBase.h">
+      <Filter>ソース ファイル\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\ObjectBase.h">
+      <Filter>ソース ファイル\Object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

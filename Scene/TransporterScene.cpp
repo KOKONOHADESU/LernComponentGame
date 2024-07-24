@@ -1,8 +1,8 @@
-#include "Transporter.h"
-#include "Title.h"
-#include "Test.h"
-#include "Load.h"
-#include "../MyDebug/Text.h"
+#include "TransporterScene.h"
+#include "TitleScene.h"
+#include "TestScene.h"
+#include "LoadScene.h"
+#include "../MyDebug/DebugText.h"
 #include "../Util/InputState.h"
 #include <DxLib.h>
 #include <cassert>

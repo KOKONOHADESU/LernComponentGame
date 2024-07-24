@@ -1,7 +1,7 @@
 #pragma once
 #include <map>
 #include <string>
-#include "Base.h"
+#include "SceneBase.h"
 
 namespace Scene
 {

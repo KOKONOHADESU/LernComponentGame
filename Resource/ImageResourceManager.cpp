@@ -1,4 +1,4 @@
-#include "ImageManager.h"
+#include "ImageResourceManager.h"
 #include <DxLib.h>
 #include <cassert>
 

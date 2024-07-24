@@ -1,10 +1,10 @@
-#include "Title.h"
-#include "Transporter.h"
-#include "../MyDebug/Text.h"
+#include "TestScene.h"
+#include "TransporterScene.h"
+#include "../MyDebug/DebugText.h"
 #include "../Util/InputState.h"
-#include "../Resource/ImageManager.h"
+#include "../Resource/ImageResourceManager.h"
+#include <string>
 #include <DxLib.h>
-#include <cassert>
 
 namespace
 {
@@ -15,43 +15,45 @@ namespace
 namespace Scene
 {
 	// コンストラクタ
-	Title::Title(const std::shared_ptr<Manager>& manager) :
+	Test::Test(const std::shared_ptr<Scene::Manager>& manager) :
 		Scene::Base(manager)
 	{
 	}
 
 	// デストラクタ
-	Title::~Title()
+	Test::~Test()
 	{
 	}
 
 	// 初期化
-	void Title::Init()
+	void Test::Init()
 	{
 		// 画像の読み込み
 		m_image = Resource::ImageManager::GetInstance()->Load(image_file_path);
 	}
 
 	// 終了処理
-	void Title::End()
+	void Test::End()
 	{
 	}
 
 	// 更新
-	void Title::Update()
+	void Test::Update()
 	{
 		// 現在のシーン名を表示
-		Debug::Text::AddLog("TitleScene");
+		Debug::Text::AddLog("TestScene");
 
+#ifdef _DEBUG
 		// Transporterシーンに遷移
 		if (InputState::IsTriggered(InputType::BACK))
 		{
 			m_manager->ChangeScene(std::make_shared<Scene::Transporter>(m_manager));
 		}
+#endif
 	}
 
 	// 描画
-	void Title::Draw()
+	void Test::Draw()
 	{
 		// 画像の描画
 		DrawRotaGraph(1920 / 2, 1080 / 2, 2.0, 0.0, m_image->GetHandle(), true);

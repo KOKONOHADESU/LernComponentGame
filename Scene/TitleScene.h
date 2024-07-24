@@ -1,25 +1,25 @@
 #pragma once
-#include "Base.h"
+#include "SceneBase.h"
+#include "../Resource/ImageResource.h"
 
 namespace Scene
 {
 	/// <summary>
-	/// ロードシーン
+	/// タイトルシーン
 	/// </summary>
-	class Load final : public Scene::Base
+	class Title final : public Scene::Base
 	{
 	public:
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
 		/// <param name="manager">シーンマネージャのインスタンス</param>
-		/// <param name="isEternal">永続表示か(デバッグ用)</param>
-		Load(const std::shared_ptr<Scene::Manager>& manager, const bool isDrawEternal = false);
+		Title(const std::shared_ptr<Scene::Manager>& manager);
 
 		/// <summary>
 		/// デストラクタ
 		/// </summary>
-		~Load();
+		~Title();
 
 		/// <summary>
 		/// 初期化
@@ -42,10 +42,6 @@ namespace Scene
 		void Draw() override final;
 
 	private:
-		// ロード画面が表示されている時間
-		int m_time;
-
-		// ロード画面が永続表示か
-		bool m_isDrawEternal;
+		std::unique_ptr<Resource::Image> m_image;
 	};
 }

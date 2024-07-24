@@ -1,5 +1,5 @@
-#include "Load.h"
-#include "../MyDebug/Text.h"
+#include "LoadScene.h"
+#include "../MyDebug/DebugText.h"
 #include "../Util/InputState.h"
 #include <DxLib.h>
 

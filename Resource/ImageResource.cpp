@@ -1,5 +1,5 @@
-#include "Image.h"
-#include "ImageManager.h"
+#include "ImageResource.h"
+#include "ImageResourceManager.h"
 #include <DxLib.h>
 
 namespace Resource

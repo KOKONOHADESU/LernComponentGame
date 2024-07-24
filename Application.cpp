@@ -1,10 +1,10 @@
 #include "Application.h"
-#include "MyDebug/Text.h"
+#include "MyDebug/DebugText.h"
 #include "Util/InputState.h"
-#include "Resource/ImageManager.h"
+#include "Resource/ImageResourceManager.h"
 #include "System/Window.h"
-#include "Scene/Transporter.h"
-#include "Scene/Title.h"
+#include "Scene/TransporterScene.h"
+#include "Scene/TitleScene.h"
 #include <DxLib.h>
 #include <string>
 

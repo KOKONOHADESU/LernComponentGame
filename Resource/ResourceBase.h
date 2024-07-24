@@ -44,7 +44,7 @@ namespace Resource
 		/// <summary>
 		/// ƒŠƒ\[ƒX‚ª‰i‘±‰»‚³‚ê‚Ä‚¢‚é‚©‚ğæ“¾‚·‚é
 		/// </summary>
-		/// <returns></returns>
+		/// <returns>‰i‘±‰»‚³‚ê‚Ä‚¢‚é‚©</returns>
 		bool IsEternal() const { return m_isEternal; }
 
 		/// <summary>

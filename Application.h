@@ -1,7 +1,7 @@
 #pragma once
 #include <memory>
 #include "Util/SingletonBase.h"
-#include "Scene/Manager.h"
+#include "Scene/SceneManager.h"
 
 /// <summary>
 /// アプリケーションを管理するシングルトンクラス

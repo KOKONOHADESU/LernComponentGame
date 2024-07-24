@@ -1,5 +1,5 @@
-#include "Manager.h"
-#include "Load.h"
+#include "SceneManager.h"
+#include "LoadScene.h"
 #include <DxLib.h>
 
 namespace Scene

@@ -1,4 +1,4 @@
-#include "Text.h"
+#include "DebugText.h"
 #include <cassert>
 #include <DxLib.h>
 

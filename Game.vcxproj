@@ -155,32 +155,36 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
-    <ClCompile Include="Resource\Base.cpp" />
-    <ClCompile Include="Resource\Image.cpp" />
-    <ClCompile Include="Resource\ImageManager.cpp" />
-    <ClCompile Include="Scene\Load.cpp" />
-    <ClCompile Include="Scene\Test.cpp" />
+    <ClCompile Include="Component\ComponentBase.cpp" />
+    <ClCompile Include="Object\ObjectBase.cpp" />
+    <ClCompile Include="Resource\ResourceBase.cpp" />
+    <ClCompile Include="Resource\ImageResource.cpp" />
+    <ClCompile Include="Resource\ImageResourceManager.cpp" />
+    <ClCompile Include="Scene\LoadScene.cpp" />
+    <ClCompile Include="Scene\TestScene.cpp" />
     <ClCompile Include="Util\InputState.cpp" />
-    <ClCompile Include="MyDebug\Text.cpp" />
+    <ClCompile Include="MyDebug\DebugText.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Scene\Title.cpp" />
-    <ClCompile Include="Scene\Manager.cpp" />
-    <ClCompile Include="Scene\Transporter.cpp" />
+    <ClCompile Include="Scene\TitleScene.cpp" />
+    <ClCompile Include="Scene\SceneManager.cpp" />
+    <ClCompile Include="Scene\TransporterScene.cpp" />
     <ClCompile Include="System\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
-    <ClInclude Include="Resource\Base.h" />
-    <ClInclude Include="Resource\Image.h" />
-    <ClInclude Include="Resource\ImageManager.h" />
-    <ClInclude Include="Scene\Load.h" />
-    <ClInclude Include="Scene\Test.h" />
+    <ClInclude Include="Object\ObjectBase.h" />
+    <ClInclude Include="Component\ComponentBase.h" />
+    <ClInclude Include="Resource\ResourceBase.h" />
+    <ClInclude Include="Resource\ImageResource.h" />
+    <ClInclude Include="Resource\ImageResourceManager.h" />
+    <ClInclude Include="Scene\LoadScene.h" />
+    <ClInclude Include="Scene\TestScene.h" />
     <ClInclude Include="Util\InputState.h" />
-    <ClInclude Include="MyDebug\Text.h" />
-    <ClInclude Include="Scene\Title.h" />
-    <ClInclude Include="Scene\Manager.h" />
-    <ClInclude Include="Scene\Base.h" />
-    <ClInclude Include="Scene\Transporter.h" />
+    <ClInclude Include="MyDebug\DebugText.h" />
+    <ClInclude Include="Scene\TitleScene.h" />
+    <ClInclude Include="Scene\SceneManager.h" />
+    <ClInclude Include="Scene\SceneBase.h" />
+    <ClInclude Include="Scene\TransporterScene.h" />
     <ClInclude Include="Util\SingletonBase.h" />
     <ClInclude Include="System\Window.h" />
   </ItemGroup>

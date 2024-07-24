@@ -1,6 +1,6 @@
 #pragma once
 #include <memory>
-#include "Manager.h"
+#include "SceneManager.h"
 
 namespace Scene
 {

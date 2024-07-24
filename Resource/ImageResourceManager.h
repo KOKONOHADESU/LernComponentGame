@@ -1,6 +1,6 @@
 #pragma once
 #include "../Util/SingletonBase.h"
-#include "Image.h"
+#include "ImageResource.h"
 #include <string>
 #include <unordered_map>
 
