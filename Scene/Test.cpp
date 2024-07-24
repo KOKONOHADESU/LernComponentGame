@@ -29,7 +29,7 @@ namespace Scene
 	void Test::Init()
 	{
 		// ‰æ‘œ‚Ì“Ç‚İ‚İ
-		m_image = Resource::ImageManager::GetInstance()->Load(image_file_path, true);
+		m_image = Resource::ImageManager::GetInstance()->Load(image_file_path);
 	}
 
 	// I—¹ˆ—

@@ -42,6 +42,6 @@ namespace Scene
 		void Draw() override final;
 
 	private:
-		std::shared_ptr<Resource::Image> m_image;
+		std::unique_ptr<Resource::Image> m_image;
 	};
 }

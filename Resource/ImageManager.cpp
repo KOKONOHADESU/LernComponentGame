@@ -17,7 +17,7 @@ namespace Resource
 	}
 
 	// 画像リソースを読み込む
-	std::shared_ptr<Image> ImageManager::Load(const std::string& filePath, const bool isEternal)
+	std::unique_ptr<Image> ImageManager::Load(const std::string& filePath, const bool isEternal)
 	{
 		// テーブルの中に既に読み込んでいる画像リソースか確認
 		if (m_imageTable.find(filePath) == m_imageTable.end())
@@ -30,7 +30,7 @@ namespace Resource
 			if (handle == -1) 	return nullptr;
 
 			// インスタンスを生成し、テーブルに保存
-			m_imageTable[filePath] = std::make_shared<Image>(handle, filePath, isEternal);
+			m_imageTable[filePath] = std::make_unique<Image>(handle, filePath, isEternal);
 		}
 
 		// 参照カウントを増やす
@@ -38,7 +38,7 @@ namespace Resource
 
 		// 呼び出し元のクラスが削除された場合、一緒に削除されてデストラクタを呼び出してほしい為、
 		// インスタンスを生成して返す
-		return std::make_shared<Image>(m_imageTable[filePath]->GetHandle(), filePath, isEternal);
+		return std::make_unique<Image>(m_imageTable[filePath]->GetHandle(), filePath, isEternal);
 	}
 
 	// リソースの参照の数を確認し、参照がない場合はリソースを解放する
