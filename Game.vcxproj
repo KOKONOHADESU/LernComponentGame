@@ -156,6 +156,7 @@
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Component\ComponentBase.cpp" />
+    <ClCompile Include="Object\ObjectManager.cpp" />
     <ClCompile Include="Object\ObjectBase.cpp" />
     <ClCompile Include="Resource\ResourceBase.cpp" />
     <ClCompile Include="Resource\ImageResource.cpp" />
@@ -172,6 +173,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
+    <ClInclude Include="Object\ObjectManager.h" />
     <ClInclude Include="Object\ObjectBase.h" />
     <ClInclude Include="Component\ComponentBase.h" />
     <ClInclude Include="Resource\ResourceBase.h" />

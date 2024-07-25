@@ -14,7 +14,7 @@ namespace Scene
 		/// </summary>
 		/// <param name="manager">シーンマネージャのインスタンス</param>
 		/// <param name="isEternal">永続表示か(デバッグ用)</param>
-		Load(const std::shared_ptr<Scene::Manager>& manager, const bool isDrawEternal = false);
+		Load(const std::shared_ptr<Scene::Manager>& pSceneManager, const bool isDrawEternal = false);
 
 		/// <summary>
 		/// デストラクタ

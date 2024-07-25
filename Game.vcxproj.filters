@@ -77,6 +77,9 @@
     <ClCompile Include="Component\ComponentBase.cpp">
       <Filter>ソース ファイル\Component</Filter>
     </ClCompile>
+    <ClCompile Include="Object\ObjectManager.cpp">
+      <Filter>ソース ファイル\Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -125,6 +128,9 @@
       <Filter>ソース ファイル\Component</Filter>
     </ClInclude>
     <ClInclude Include="Object\ObjectBase.h">
+      <Filter>ソース ファイル\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\ObjectManager.h">
       <Filter>ソース ファイル\Object</Filter>
     </ClInclude>
   </ItemGroup>

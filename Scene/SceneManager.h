@@ -47,7 +47,7 @@ namespace Scene
 		/// Updateは、一番上に積まれたシーンのみが呼ばれる
 		/// </summary>
 		/// <param name="scene">追加したいシーンのインスタンス</param>
-		void PushScene(const std::shared_ptr<Scene::Base>& scene);
+		void PushScene(const std::shared_ptr<Scene::Base>& pScene);
 
 		/// <summary>
 		/// 一番上に積まれたシーンを削除する

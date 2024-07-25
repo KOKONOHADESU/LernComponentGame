@@ -3,6 +3,9 @@
 #include <memory>
 #include "../Component/ComponentBase.h"
 
+// プロトタイプ宣言
+namespace Component { class Base; }
+
 namespace Object
 {
 	/// <summary>
@@ -64,7 +67,7 @@ namespace Object
 			for (auto& component : m_pComponentList)
 			{
 				// コンポーネントをT型にキャスト
-				auto castedComponent = dynamic_cast<T*>(component.get()));
+				auto castedComponent = dynamic_cast<T*>(component.get());
 
 				// キャストに成功した場合はそのコンポーネントをreturn
 				if (castedComponent)
@@ -83,19 +86,6 @@ namespace Object
 		/// </summary>
 		/// <param name="component">コンポーネントの右辺値</param>
 		void AddComponent(std::unique_ptr<Component::Base>&& pComponent);
-
-		template<class T> 
-		T* AddComponent()
-		{
-			// コンポーネントを生成
-			auto pComponent = std::make_unique<T>();
-
-			// コンポーネントを追加
-			AddComponent(std::move(pComponent));
-
-			// コンポーネントをreturn
-			return pComponent.get();
-		}
 
 	protected:
 		// コンポーネントリスト

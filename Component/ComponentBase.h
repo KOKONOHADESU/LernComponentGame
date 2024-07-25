@@ -2,6 +2,9 @@
 #include "../Object/ObjectBase.h"
 #include <memory>
 
+// プロトタイプ宣言
+namespace Object { class Base; }
+
 namespace Component
 {
 	/// <summary>
@@ -18,8 +21,8 @@ namespace Component
 
 		/// <summary>
 		/// デストラクタ
-		/// 		/// </summary>
-		virtual ~Base();
+		/// </summary>
+		virtual ~Base() {};
 
 	protected:
 		// 自分を所有しているオブジェクト

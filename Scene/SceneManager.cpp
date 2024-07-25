@@ -14,10 +14,10 @@ namespace Scene
 	void Manager::Update()
 	{
 		// リストが空っぽだったら何もしない
-		if (!m_scenes.empty())
+		if (!m_pSceneTable.empty())
 		{
 			// 先頭のみ実行
-			m_scenes.front()->Update();
+			m_pSceneTable.front()->Update();
 		}
 	}
 
@@ -25,7 +25,7 @@ namespace Scene
 	void Manager::Draw()
 	{
 		// 逆順に描画(最後に積んだものが最初に描画される)
-		for (auto rit = m_scenes.rbegin(); rit != m_scenes.rend(); rit++)
+		for (auto rit = m_pSceneTable.rbegin(); rit != m_pSceneTable.rend(); rit++)
 		{
 			// 描画
 			rit->get()->Draw();
@@ -33,24 +33,24 @@ namespace Scene
 	}
 
 	// シーンの切り替え
-	void Manager::ChangeScene(const std::shared_ptr<Scene::Base>& scene)
+	void Manager::ChangeScene(const std::shared_ptr<Scene::Base>& pScene)
 	{
 		// リストが空っぽだったら入れ替えるのではなく
-		if (m_scenes.empty())
+		if (m_pSceneTable.empty())
 		{
 			// シーンの追加
-			PushScene(scene);
+			PushScene(pScene);
 		}
 		else
 		{
 			// シーンの終了処理
-			m_scenes.front()->End();
+			m_pSceneTable.front()->End();
 
 			// 既に１つ以上あったら先頭のものを入れ替える
-			m_scenes.front() = scene;
+			m_pSceneTable.front() = pScene;
 
 			// シーンの初期化
-			m_scenes.front()->Init();
+			m_pSceneTable.front()->Init();
 
 			// 非同期読み込みのチェック
 			CheckAsyncLoad();
@@ -58,13 +58,13 @@ namespace Scene
 	}
 
 	// シーンの追加
-	void Manager::PushScene(const std::shared_ptr<Scene::Base>& scene)
+	void Manager::PushScene(const std::shared_ptr<Scene::Base>& pScene)
 	{
 		// シーンの追加
-		m_scenes.push_front(scene);
+		m_pSceneTable.push_front(pScene);
 
 		// シーンの初期化
-		m_scenes.front()->Init();
+		m_pSceneTable.front()->Init();
 
 		// 非同期読み込みのチェック
 		CheckAsyncLoad();
@@ -74,23 +74,23 @@ namespace Scene
 	void Manager::PopScene()
 	{
 		// シーンの終了処理
-		m_scenes.front()->End();
+		m_pSceneTable.front()->End();
 
 		// シーンの削除
-		m_scenes.pop_front();
+		m_pSceneTable.pop_front();
 	}
 
 	// シーンの全削除
 	void Manager::ClearScene()
 	{
 		// シーンの終了処理
-		for (auto& scene : m_scenes)
+		for (auto& scene : m_pSceneTable)
 		{
 			scene->End();
 		}
 
 		// シーンの全削除
-		m_scenes.clear();
+		m_pSceneTable.clear();
 	}
 
 	// 非同期読み込みのチェック

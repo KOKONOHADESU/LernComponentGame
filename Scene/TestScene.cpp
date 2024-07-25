@@ -15,8 +15,8 @@ namespace
 namespace Scene
 {
 	// コンストラクタ
-	Test::Test(const std::shared_ptr<Scene::Manager>& manager) :
-		Scene::Base(manager)
+	Test::Test(const std::shared_ptr<Scene::Manager>& pSceneManager) :
+		Scene::Base(pSceneManager)
 	{
 	}
 
@@ -29,7 +29,7 @@ namespace Scene
 	void Test::Init()
 	{
 		// 画像の読み込み
-		m_image = Resource::ImageManager::GetInstance()->Load(image_file_path);
+		m_pImage = Resource::ImageManager::GetInstance()->Load(image_file_path);
 	}
 
 	// 終了処理
@@ -47,7 +47,7 @@ namespace Scene
 		// Transporterシーンに遷移
 		if (InputStateManager::IsTriggered(InputType::BACK))
 		{
-			m_manager->ChangeScene(std::make_shared<Scene::Transporter>(m_manager));
+			m_pSceneManager->ChangeScene(std::make_shared<Scene::Transporter>(m_pSceneManager));
 		}
 #endif
 	}
@@ -56,6 +56,6 @@ namespace Scene
 	void Test::Draw()
 	{
 		// 画像の描画
-		DrawRotaGraph(1920 / 2, 1080 / 2, 2.0, 0.0, m_image->GetHandle(), true);
+		DrawRotaGraph(1920 / 2, 1080 / 2, 2.0, 0.0, m_pImage->GetHandle(), true);
 	}
 }
