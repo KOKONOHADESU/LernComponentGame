@@ -1,6 +1,6 @@
 #include "Application.h"
 #include "MyDebug/DebugText.h"
-#include "Util/InputState.h"
+#include "Util/InputStateManager.h"
 #include "Resource/ImageResourceManager.h"
 #include "System/Window.h"
 #include "Scene/TransporterScene.h"
@@ -35,7 +35,7 @@ bool Application::Init()
 	Debug::Text::Init();
 
 	// 入力状態の初期化
-	InputState::Init();
+	InputStateManager::Init();
 
 	// ダブルバッファモード
 	// 裏画面に描画
@@ -49,11 +49,11 @@ bool Application::Init()
 void Application::Run()
 {
 	// シーンマネージャの生成
-	m_sceneManager = std::make_shared<Scene::Manager>();
+	m_pSceneManager = std::make_shared<Scene::Manager>();
 
 // デバッグ時
 #ifdef _DEBUG
-	m_sceneManager->PushScene(std::make_shared<Scene::Transporter>(m_sceneManager));
+	m_pSceneManager->PushScene(std::make_shared<Scene::Transporter>(m_pSceneManager));
 // リリース時
 #else
 	m_sceneManager->PushScene(std::make_shared<TitleScene>(m_sceneManager));
@@ -72,13 +72,13 @@ void Application::Run()
 		Debug::Text::ClearLog();
 
 		// 入力状態の更新
-		InputState::Update();
+		InputStateManager::Update();
 
 		// シーンの更新
-		m_sceneManager->Update();
+		m_pSceneManager->Update();
 
 		// シーンの描画
-		m_sceneManager->Draw();
+		m_pSceneManager->Draw();
 
 		// デバッグテキストの描画
 		Debug::Text::DrawLog();
@@ -110,7 +110,7 @@ void Application::End()
 	Debug::Text::End();
 
 	// シーンを全て削除
-	m_sceneManager->ClearScene();
+	m_pSceneManager->ClearScene();
 
 	// 画像リソース管理の削除
 	Resource::ImageManager::GetInstance()->DeleteInstance();

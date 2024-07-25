@@ -41,5 +41,5 @@ private:
 
 private:
 	// シーンマネージャ
-	std::shared_ptr<Scene::Manager> m_sceneManager;
+	std::shared_ptr<Scene::Manager> m_pSceneManager;
 };

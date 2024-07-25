@@ -1,10 +1,10 @@
-#include "InputState.h"
+#include "InputStateManager.h"
 #include <DxLib.h>
 
-namespace InputState
+namespace InputStateManager
 {
 	// 初期化
-	void InputState::Init()
+	void InputStateManager::Init()
 	{
 		// ボタンの入力タイプをどのボタンにするかの設定
 		m_inputMapTable[InputType::DECISION] = { {InputCategory::PAD, XINPUT_BUTTON_A },				// Aボタン
@@ -39,7 +39,7 @@ namespace InputState
 	}
 
 	// 更新
-	void InputState::Update()
+	void InputStateManager::Update()
 	{
 		// 直前の入力情報を記憶しておく
 		m_lastInput = m_currentInput;
@@ -84,19 +84,19 @@ namespace InputState
 	}
 
 	// ボタンが押された瞬間の入力情報の取得
-	bool InputState::IsTriggered(const InputType type)
+	bool InputStateManager::IsTriggered(const InputType type)
 	{
 		return IsPressed(type) && !m_lastInput[static_cast<int>(type)];
 	}
 
 	// ボタンが押されている間の入力情報の取得
-	bool InputState::IsPressed(const InputType type)
+	bool InputStateManager::IsPressed(const InputType type)
 	{
 		return m_currentInput[static_cast<int>(type)];
 	}
 
 	// パッドのトリガーの入力情報の取得
-	bool InputState::IsPadTrigger(const PadLR type)
+	bool InputStateManager::IsPadTrigger(const PadLR type)
 	{
 		// パッドの情報の取得
 		XINPUT_STATE  padState;
@@ -116,7 +116,7 @@ namespace InputState
 	}
 
 	// パッドのスティックの入力情報を取得
-	int InputState::IsPadStick(const PadLR stick, const PadStickInputType type)
+	int InputStateManager::IsPadStick(const PadLR stick, const PadStickInputType type)
 	{
 		// パッドの情報の取得
 		XINPUT_STATE  padState;

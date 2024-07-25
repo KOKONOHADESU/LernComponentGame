@@ -1,6 +1,6 @@
 #include "LoadScene.h"
 #include "../MyDebug/DebugText.h"
-#include "../Util/InputState.h"
+#include "../Util/InputStateManager.h"
 #include <DxLib.h>
 
 namespace
@@ -13,8 +13,8 @@ namespace
 namespace Scene
 {
 	// コンストラクタ
-	Load::Load(const std::shared_ptr<Scene::Manager>& manager, const bool isEternal) :
-		Scene::Base(manager),
+	Load::Load(const std::shared_ptr<Scene::Manager>& pSceneManager, const bool isEternal) :
+		Scene::Base(pSceneManager),
 		m_isDrawEternal(isEternal),
 		m_time(0)
 	{
@@ -53,20 +53,20 @@ namespace Scene
 				m_time++ >= lowest_time_load_scene)
 			{
 				// ロード画面を削除することを通知
-				m_manager->SetLoadSceneFlag(false);
+				m_pSceneManager->SetLoadSceneFlag(false);
 
 				// ロード画面を削除
-				m_manager->PopScene();
+				m_pSceneManager->PopScene();
 			}
 		}
 		// 永続表示の場合
 		else
 		{
 			// 戻るボタンが押されたら
-			if (InputState::IsTriggered(InputType::BACK))
+			if (InputStateManager::IsTriggered(InputType::BACK))
 			{
 				// ロード画面を削除
-				m_manager->PopScene();
+				m_pSceneManager->PopScene();
 			}
 		}
 	}

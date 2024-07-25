@@ -16,7 +16,7 @@ namespace Scene
 		/// コンストラクタ
 		/// </summary>
 		/// <param name="manager">シーンマネージャーのインスタンス</param>
-		Transporter(const std::shared_ptr<Scene::Manager>& manager);
+		Transporter(const std::shared_ptr<Scene::Manager>& pSceneManager);
 
 		/// <summary>
 		/// デストラクタ
@@ -55,8 +55,10 @@ namespace Scene
 		};
 
 	private:
-		// シーンの名前
-		std::map<SceneItem, std::string> m_scenes;
+		// シーンの種類と名前を紐づけているシーンのテーブル
+		// first : シーンの種類
+		// second : シーンの名前
+		std::map<SceneItem, std::string> m_pSceneTable;
 
 		// 選択中のインデックス
 		int m_selectIndex;

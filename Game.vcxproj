@@ -162,7 +162,7 @@
     <ClCompile Include="Resource\ImageResourceManager.cpp" />
     <ClCompile Include="Scene\LoadScene.cpp" />
     <ClCompile Include="Scene\TestScene.cpp" />
-    <ClCompile Include="Util\InputState.cpp" />
+    <ClCompile Include="Util\InputStateManager.cpp" />
     <ClCompile Include="MyDebug\DebugText.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Scene\TitleScene.cpp" />
@@ -179,7 +179,7 @@
     <ClInclude Include="Resource\ImageResourceManager.h" />
     <ClInclude Include="Scene\LoadScene.h" />
     <ClInclude Include="Scene\TestScene.h" />
-    <ClInclude Include="Util\InputState.h" />
+    <ClInclude Include="Util\InputStateManager.h" />
     <ClInclude Include="MyDebug\DebugText.h" />
     <ClInclude Include="Scene\TitleScene.h" />
     <ClInclude Include="Scene\SceneManager.h" />

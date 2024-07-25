@@ -17,8 +17,8 @@ namespace Scene
 		/// コンストラクタ
 		/// </summary>
 		/// <param name="manager">シーンマネージャのインスタンス</param>
-		Base(const std::shared_ptr<Scene::Manager>& manager) :
-			m_manager(manager)
+		Base(const std::shared_ptr<Scene::Manager>& pSceneManager) :
+			m_pSceneManager(pSceneManager)
 		{
 		}
 
@@ -51,6 +51,6 @@ namespace Scene
 
 	protected:
 		// シーンのマネージャー
-		std::shared_ptr<Scene::Manager> m_manager;
+		std::shared_ptr<Scene::Manager> m_pSceneManager;
 	};
 }

@@ -62,7 +62,7 @@ struct InputInfo
 /// <summary>
 /// “ü—Íó‘Ô‚ğŠÇ—‚·‚é–¼‘O‹óŠÔ
 /// </summary>
-namespace InputState
+namespace InputStateManager
 {
 	/// <summary>
 	/// ‰Šú‰»

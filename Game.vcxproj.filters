@@ -50,7 +50,7 @@
     <ClCompile Include="Scene\TransporterScene.cpp">
       <Filter>ソース ファイル\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="Util\InputState.cpp">
+    <ClCompile Include="Util\InputStateManager.cpp">
       <Filter>ソース ファイル\Util</Filter>
     </ClCompile>
     <ClCompile Include="Scene\TestScene.cpp">
@@ -100,7 +100,7 @@
     <ClInclude Include="Scene\TransporterScene.h">
       <Filter>ソース ファイル\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="Util\InputState.h">
+    <ClInclude Include="Util\InputStateManager.h">
       <Filter>ソース ファイル\Util</Filter>
     </ClInclude>
     <ClInclude Include="Scene\TestScene.h">

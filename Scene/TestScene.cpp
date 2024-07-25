@@ -1,7 +1,7 @@
 #include "TestScene.h"
 #include "TransporterScene.h"
 #include "../MyDebug/DebugText.h"
-#include "../Util/InputState.h"
+#include "../Util/InputStateManager.h"
 #include "../Resource/ImageResourceManager.h"
 #include <string>
 #include <DxLib.h>
@@ -45,7 +45,7 @@ namespace Scene
 
 #ifdef _DEBUG
 		// TransporterƒV[ƒ“‚É‘JˆÚ
-		if (InputState::IsTriggered(InputType::BACK))
+		if (InputStateManager::IsTriggered(InputType::BACK))
 		{
 			m_manager->ChangeScene(std::make_shared<Scene::Transporter>(m_manager));
 		}

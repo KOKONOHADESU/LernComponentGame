@@ -3,7 +3,7 @@
 #include "TestScene.h"
 #include "LoadScene.h"
 #include "../MyDebug/DebugText.h"
-#include "../Util/InputState.h"
+#include "../Util/InputStateManager.h"
 #include <DxLib.h>
 #include <cassert>
 
@@ -20,8 +20,8 @@ namespace
 namespace Scene
 {
 	// コンストラクタ
-	Transporter::Transporter(const std::shared_ptr<Scene::Manager>& manager) :
-		Base(manager),
+	Transporter::Transporter(const std::shared_ptr<Scene::Manager>& pSceneManager) :
+		Base(pSceneManager),
 		m_selectIndex(0)
 	{
 	}
@@ -35,9 +35,9 @@ namespace Scene
 	void Transporter::Init()
 	{
 		// シーン名を設定
-		m_scenes[SceneItem::TITLE] = "TitleScene";
-		m_scenes[SceneItem::TEST] = "TestScene";
-		m_scenes[SceneItem::LOAD] = "LoadScene";
+		m_pSceneTable[SceneItem::TITLE] = "TitleScene";
+		m_pSceneTable[SceneItem::TEST] = "TestScene";
+		m_pSceneTable[SceneItem::LOAD] = "LoadScene";
 	}
 
 	// 終了処理
@@ -53,33 +53,33 @@ namespace Scene
 
 		// 選択肢を上下で切り替え
 		int sceneItemTotalValue = static_cast<int>(SceneItem::MAX);
-		if (InputState::IsTriggered(InputType::UP))
+		if (InputStateManager::IsTriggered(InputType::UP))
 		{
 			m_selectIndex = ((m_selectIndex - 1) + sceneItemTotalValue) % sceneItemTotalValue;
 		}
-		else if (InputState::IsTriggered(InputType::DOWN))
+		else if (InputStateManager::IsTriggered(InputType::DOWN))
 		{
 			m_selectIndex = (m_selectIndex + 1) % sceneItemTotalValue;
 		}
 
 		// 決定ボタンが押されたらシーン遷移
-		if (InputState::IsTriggered(InputType::DECISION))
+		if (InputStateManager::IsTriggered(InputType::DECISION))
 		{
 			switch (static_cast<SceneItem>(m_selectIndex))
 			{
 				// タイトル
 			case SceneItem::TITLE:
-				m_manager->ChangeScene(std::make_shared<Scene::Title>(m_manager));
+				m_pSceneManager->ChangeScene(std::make_shared<Scene::Title>(m_pSceneManager));
 				return;
 
 				// テスト
 			case SceneItem::TEST:
-				m_manager->ChangeScene(std::make_shared<Scene::Test>(m_manager));
+				m_pSceneManager->ChangeScene(std::make_shared<Scene::Test>(m_pSceneManager));
 				return;
 
 				// ロード
 			case SceneItem::LOAD:
-				m_manager->PushScene(std::make_shared<Scene::Load>(m_manager, true));
+				m_pSceneManager->PushScene(std::make_shared<Scene::Load>(m_pSceneManager, true));
 				return;
 			}
 		}
@@ -88,7 +88,7 @@ namespace Scene
 	// 描画
 	void Transporter::Draw()
 	{
-		for (auto& scene : m_scenes)
+		for (auto& scene : m_pSceneTable)
 		{
 			// シーン名を表示
 			DrawString(draw_text_pos_x, draw_text_pos_y + text_space_y * static_cast<int>(scene.first), scene.second.c_str(), 0xffffff, true);

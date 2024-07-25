@@ -14,7 +14,7 @@ namespace Scene
 		/// コンストラクタ
 		/// </summary>
 		/// <param name="manager">シーンマネージャのインスタンス</param>
-		Title(const std::shared_ptr<Scene::Manager>& manager);
+		Title(const std::shared_ptr<Scene::Manager>& pSceneManager);
 
 		/// <summary>
 		/// デストラクタ
@@ -42,6 +42,6 @@ namespace Scene
 		void Draw() override final;
 
 	private:
-		std::unique_ptr<Resource::Image> m_image;
+		std::unique_ptr<Resource::Image> m_pImage;
 	};
 }

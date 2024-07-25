@@ -16,13 +16,13 @@ public:
 	static T* GetInstance()
 	{
 		// インスタンスがない場合は作成する
-		if (!m_instance)
+		if (!m_pInstance)
 		{
 			// インスタンスを作成
-			m_instance = new T();
+			m_pInstance = new T();
 		}
 		// インスタンスを返す
-		return m_instance;
+		return m_pInstance;
 	}
 
 	/// <summary>
@@ -31,13 +31,13 @@ public:
 	static void DeleteInstance()
 	{
 		// インスタンスがある場合は破棄する
-		if (m_instance)
+		if (m_pInstance)
 		{
 			// インスタンスを破棄
-			delete m_instance;
+			delete m_pInstance;
 
 			// インスタンスをnullptrにする
-			m_instance = nullptr;
+			m_pInstance = nullptr;
 		}
 	}
 
@@ -60,8 +60,8 @@ private:
 	SingletonBase& operator=(const SingletonBase&) = delete;
 
 	// インスタンス
-	static T* m_instance;
+	static T* m_pInstance;
 };
 
 // インスタンスの実体化
-template <typename T> T* SingletonBase<T>::m_instance;
+template <typename T> T* SingletonBase<T>::m_pInstance;

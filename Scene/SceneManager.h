@@ -40,7 +40,7 @@ namespace Scene
 		/// 現在のシーンを削除し、引数で渡されたシーンに切り替える
 		/// </summary>
 		/// <param name="nextScene">切り替えたいシーンのインスタンス</param>
-		void ChangeScene(const std::shared_ptr<Scene::Base>& scene);
+		void ChangeScene(const std::shared_ptr<Scene::Base>& pScene);
 
 		/// <summary>
 		/// 現在のシーンを削除せずに、引数で渡されたシーンを上に積む
@@ -73,7 +73,7 @@ namespace Scene
 
 	private:
 		// シーンのリスト
-		std::list<std::shared_ptr<Scene::Base>> m_scenes;
+		std::list<std::shared_ptr<Scene::Base>> m_pSceneTable;
 
 		// ロード画面が存在するか
 		bool m_isLoadScene;

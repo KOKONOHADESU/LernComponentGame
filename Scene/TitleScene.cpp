@@ -1,7 +1,7 @@
 #include "TitleScene.h"
 #include "TransporterScene.h"
 #include "../MyDebug/DebugText.h"
-#include "../Util/InputState.h"
+#include "../Util/InputStateManager.h"
 #include "../Resource/ImageResourceManager.h"
 #include <DxLib.h>
 #include <cassert>
@@ -15,8 +15,8 @@ namespace
 namespace Scene
 {
 	// コンストラクタ
-	Title::Title(const std::shared_ptr<Manager>& manager) :
-		Scene::Base(manager)
+	Title::Title(const std::shared_ptr<Manager>& pSceneManager) :
+		Scene::Base(pSceneManager)
 	{
 	}
 
@@ -29,7 +29,7 @@ namespace Scene
 	void Title::Init()
 	{
 		// 画像の読み込み
-		m_image = Resource::ImageManager::GetInstance()->Load(image_file_path);
+		m_pImage = Resource::ImageManager::GetInstance()->Load(image_file_path);
 	}
 
 	// 終了処理
@@ -45,9 +45,9 @@ namespace Scene
 
 #ifdef _DEBUG
 		// Transporterシーンに遷移
-		if (InputState::IsTriggered(InputType::BACK))
+		if (InputStateManager::IsTriggered(InputType::BACK))
 		{
-			m_manager->ChangeScene(std::make_shared<Scene::Transporter>(m_manager));
+			m_pSceneManager->ChangeScene(std::make_shared<Scene::Transporter>(m_pSceneManager));
 		}
 #endif
 	}
@@ -56,6 +56,6 @@ namespace Scene
 	void Title::Draw()
 	{
 		// 画像の描画
-		DrawRotaGraph(1920 / 2, 1080 / 2, 2.0, 0.0, m_image->GetHandle(), true);
+		DrawRotaGraph(1920 / 2, 1080 / 2, 2.0, 0.0, m_pImage->GetHandle(), true);
 	}
 }
