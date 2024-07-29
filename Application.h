@@ -29,17 +29,25 @@ public:
 	void Run();
 	
 	/// <summary>
-	/// アプリケーションを終了する
+	/// アプリケーションの終了処理
 	/// </summary>
 	void End();
+
+	/// <summary>
+	/// ゲーム終了
+	/// </summary>
+	void Exit();
 
 private:
 	/// <summary>
 	/// コンストラクタ
 	/// </summary>
-	Application(){}
+	Application();
 
 private:
 	// シーンマネージャ
 	std::shared_ptr<Scene::Manager> m_pSceneManager;
+
+	// ゲーム終了フラグ
+	bool m_isExit;
 };

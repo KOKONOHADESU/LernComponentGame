@@ -2,6 +2,8 @@
 #include "TitleScene.h"
 #include "TestScene.h"
 #include "LoadScene.h"
+#include "StageSelectScene.h"
+#include "../Application.h"
 #include "../MyDebug/DebugText.h"
 #include "../Util/InputStateManager.h"
 #include <DxLib.h>
@@ -36,8 +38,10 @@ namespace Scene
 	{
 		// シーン名を設定
 		m_pSceneTable[SceneItem::TITLE] = "TitleScene";
+		m_pSceneTable[SceneItem::STAGE_SELECT] = "StageSelectScene";
 		m_pSceneTable[SceneItem::TEST] = "TestScene";
 		m_pSceneTable[SceneItem::LOAD] = "LoadScene";
+		m_pSceneTable[SceneItem::EXIT] = "Exit";
 	}
 
 	// 終了処理
@@ -72,6 +76,11 @@ namespace Scene
 				m_pSceneManager->ChangeScene(std::make_shared<Scene::Title>(m_pSceneManager));
 				return;
 
+				// ステージ選択
+			case SceneItem::STAGE_SELECT:
+				m_pSceneManager->ChangeScene(std::make_shared<Scene::StageSelect>(m_pSceneManager));
+				return;
+
 				// テスト
 			case SceneItem::TEST:
 				m_pSceneManager->ChangeScene(std::make_shared<Scene::Test>(m_pSceneManager));
@@ -80,6 +89,11 @@ namespace Scene
 				// ロード
 			case SceneItem::LOAD:
 				m_pSceneManager->PushScene(std::make_shared<Scene::Load>(m_pSceneManager, true));
+				return;
+
+				// 終了
+			case SceneItem::EXIT:
+				Application::GetInstance()->End();
 				return;
 			}
 		}

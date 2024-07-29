@@ -47,9 +47,11 @@ namespace Scene
 		// シーンの種類
 		enum class SceneItem
 		{
-			TITLE,	// タイトル
-			TEST,	// テスト
-			LOAD,	// ロード
+			TITLE,			// タイトル
+			STAGE_SELECT,	// ステージ選択
+			TEST,			// テスト
+			LOAD,			// ロード
+			EXIT,			// 終了
 
 			MAX		// 最大数
 		};

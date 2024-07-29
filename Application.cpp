@@ -14,6 +14,11 @@ namespace
 	constexpr int fps = 60;
 }
 
+// コンストラクタ
+Application::Application() :
+	m_isExit(false)
+{
+}
 
 // 初期化
 bool Application::Init()
@@ -23,6 +28,9 @@ bool Application::Init()
 
 	// 非同期読み込み設定に変更
 	SetUseASyncLoadFlag(true);
+
+	// 垂直同期をOFFにする
+	SetWaitVSyncFlag(false);
 
 	// ＤＸライブラリ初期化処理
 	if (DxLib_Init() == -1)
@@ -71,6 +79,9 @@ void Application::Run()
 		// デバッグテキストのクリア
 		Debug::Text::ClearLog();
 
+		// fpsの表示
+		Debug::Text::AddLog("FPS", { static_cast<int>(GetFPS()) });
+
 		// 入力状態の更新
 		InputStateManager::Update();
 
@@ -85,6 +96,9 @@ void Application::Run()
 
 		// 裏画面を表画面を入れ替える
 		ScreenFlip();
+
+		// ゲーム終了フラグが立っていたら終了
+		if (m_isExit) break;
 
 // デバッグ時のみ
 #ifdef _DEBUG
@@ -103,7 +117,7 @@ void Application::Run()
 	}
 }
 
-// 終了
+// 終了処理
 void Application::End()
 {
 	// デバッグテキストの終了処理
@@ -120,4 +134,10 @@ void Application::End()
 
 	// ＤＸライブラリ使用の終了処理
 	DxLib_End();
+}
+
+// ゲーム終了
+void Application::Exit()
+{
+	m_isExit = true;
 }

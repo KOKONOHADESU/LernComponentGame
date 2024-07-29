@@ -1,4 +1,5 @@
 #pragma once
+#include <map>
 #include "SceneBase.h"
 #include "../Resource/ImageResource.h"
 
@@ -42,6 +43,23 @@ namespace Scene
 		void Draw() override final;
 
 	private:
-		std::unique_ptr<Resource::Image> m_pImage;
+		// シーンの種類
+		enum class SceneItem
+		{
+			START,			// スタート
+			OPTION,			// オプション
+			EXIT,			// 終了
+
+			MAX		// 最大数
+		};
+
+	private:
+		// シーンの種類と名前を紐づけているシーンのテーブル
+		// first : シーンの種類
+		// second : シーンの名前
+		std::map<SceneItem, std::string> m_pSceneTable;
+
+		// 選択中のインデックス
+		int m_selectIndex;
 	};
 }
