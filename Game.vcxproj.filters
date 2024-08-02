@@ -30,6 +30,9 @@
     <Filter Include="ソース ファイル\Object">
       <UniqueIdentifier>{144b3d3b-fd0a-4dd4-b97a-7288a2ad7a51}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Object\Charactor">
+      <UniqueIdentifier>{a9c73975-868b-4146-9016-7843b6b13e1a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -82,6 +85,12 @@
     </ClCompile>
     <ClCompile Include="Scene\StageSelectScene.cpp">
       <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Charactor\CharactorBase.cpp">
+      <Filter>ソース ファイル\Object\Charactor</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Charactor\Player.cpp">
+      <Filter>ソース ファイル\Object\Charactor</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -138,6 +147,12 @@
     </ClInclude>
     <ClInclude Include="Scene\StageSelectScene.h">
       <Filter>ソース ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Charactor\CharactorBase.h">
+      <Filter>ソース ファイル\Object\Charactor</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Charactor\Player.h">
+      <Filter>ソース ファイル\Object\Charactor</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

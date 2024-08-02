@@ -155,9 +155,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Object\Charactor\CharactorBase.cpp" />
     <ClCompile Include="Component\ComponentBase.cpp" />
     <ClCompile Include="Object\ObjectManager.cpp" />
     <ClCompile Include="Object\ObjectBase.cpp" />
+    <ClCompile Include="Object\Charactor\Player.cpp" />
     <ClCompile Include="Resource\ResourceBase.cpp" />
     <ClCompile Include="Resource\ImageResource.cpp" />
     <ClCompile Include="Resource\ImageResourceManager.cpp" />
@@ -174,9 +176,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
+    <ClInclude Include="Object\Charactor\CharactorBase.h" />
     <ClInclude Include="Object\ObjectManager.h" />
     <ClInclude Include="Object\ObjectBase.h" />
     <ClInclude Include="Component\ComponentBase.h" />
+    <ClInclude Include="Object\Charactor\Player.h" />
     <ClInclude Include="Resource\ResourceBase.h" />
     <ClInclude Include="Resource\ImageResource.h" />
     <ClInclude Include="Resource\ImageResourceManager.h" />
