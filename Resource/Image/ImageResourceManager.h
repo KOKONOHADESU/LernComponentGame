@@ -1,5 +1,5 @@
 #pragma once
-#include "../Util/SingletonBase.h"
+#include "../../Util/SingletonBase.h"
 #include "ImageResource.h"
 #include <string>
 #include <unordered_map>
@@ -31,6 +31,11 @@ namespace Resource
 		/// <returns>テーブルに保存した画像リソースインスタンスと同じデータを持つ、インスタンスを生成して返す
 		/// (呼び出し元のクラスが削除された場合、一緒に削除されてデストラクタを呼び出してほしい為)</returns>
 		std::unique_ptr<Image> Load(const std::string& filePath, const bool isEternal = false);
+
+		/// <summary>
+		/// 非同期読み込みのハンドルを確認し、読み込みが完了している場合はハンドルが正しいか確認する
+		/// </summary>
+		void CheckAsyncLoadHandle();
 
 		/// <summary>
 		/// リソースの参照の数を確認し、参照がない場合はリソースを解放する

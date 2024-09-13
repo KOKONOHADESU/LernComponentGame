@@ -1,7 +1,7 @@
 #include "Application.h"
 #include "MyDebug/DebugText.h"
 #include "Util/InputStateManager.h"
-#include "Resource/ImageResourceManager.h"
+#include "Resource/Image/ImageResourceManager.h"
 #include "System/Window.h"
 #include "Scene/TransporterScene.h"
 #include "Scene/TitleScene.h"
@@ -26,8 +26,8 @@ bool Application::Init()
 	// ウィンドウの設定
 	System::Window::GetInstance()->Init();
 
-	// 非同期読み込み設定に変更
-	SetUseASyncLoadFlag(true);
+	// 非同期読み込み設定を変更
+	SetUseASyncLoadFlag(false);
 
 	// 垂直同期をOFFにする
 	SetWaitVSyncFlag(false);
@@ -64,7 +64,7 @@ void Application::Run()
 	m_pSceneManager->PushScene(std::make_shared<Scene::Transporter>(m_pSceneManager));
 // リリース時
 #else
-	m_sceneManager->PushScene(std::make_shared<TitleScene>(m_sceneManager));
+	m_pSceneManager->PushScene(std::make_shared<Scene::Title>(m_pSceneManager));
 #endif
 
 	// 異常が起きた時に終了
@@ -81,6 +81,9 @@ void Application::Run()
 
 		// fpsの表示
 		Debug::Text::AddLog("FPS", { static_cast<int>(GetFPS()) });
+
+		// 画像の非同期読み込みのチェック
+		Resource::ImageManager::GetInstance()->CheckAsyncLoadHandle();
 
 		// 入力状態の更新
 		InputStateManager::Update();

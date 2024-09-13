@@ -1,5 +1,5 @@
 #pragma once
-#include "ResourceBase.h"
+#include "../ResourceBase.h"
 
 namespace Resource
 {

@@ -1,6 +1,6 @@
 #pragma once
 #include "SceneBase.h"
-#include "../Resource/ImageResource.h"
+#include "../Resource/Image/ImageResource.h"
 
 namespace Scene
 {

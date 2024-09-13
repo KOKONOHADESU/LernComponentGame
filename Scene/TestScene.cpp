@@ -2,14 +2,14 @@
 #include "TransporterScene.h"
 #include "../MyDebug/DebugText.h"
 #include "../Util/InputStateManager.h"
-#include "../Resource/ImageResourceManager.h"
+#include "../Resource/Image/ImageResourceManager.h"
 #include <string>
 #include <DxLib.h>
 
 namespace
 {
 	// テスト用の画像ファイルパス
-	const std::string image_file_path = "Data/Image/Test.png";
+	const std::string image_file_path = "Data/Image/UI/Test.pn";
 }
 
 namespace Scene

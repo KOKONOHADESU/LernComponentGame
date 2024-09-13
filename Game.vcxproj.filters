@@ -33,6 +33,12 @@
     <Filter Include="ソース ファイル\Object\Charactor">
       <UniqueIdentifier>{a9c73975-868b-4146-9016-7843b6b13e1a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Sound">
+      <UniqueIdentifier>{4ff93184-38c3-4b83-8dec-86317413eae6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Resource\Image">
+      <UniqueIdentifier>{ce1c6b83-0627-4790-b5b3-dddd6349c0a5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -65,12 +71,6 @@
     <ClCompile Include="System\Window.cpp">
       <Filter>ソース ファイル\System</Filter>
     </ClCompile>
-    <ClCompile Include="Resource\ImageResourceManager.cpp">
-      <Filter>ソース ファイル\Resource</Filter>
-    </ClCompile>
-    <ClCompile Include="Resource\ImageResource.cpp">
-      <Filter>ソース ファイル\Resource</Filter>
-    </ClCompile>
     <ClCompile Include="Resource\ResourceBase.cpp">
       <Filter>ソース ファイル\Resource</Filter>
     </ClCompile>
@@ -91,6 +91,12 @@
     </ClCompile>
     <ClCompile Include="Object\Charactor\Player.cpp">
       <Filter>ソース ファイル\Object\Charactor</Filter>
+    </ClCompile>
+    <ClCompile Include="Resource\Image\ImageResourceManager.cpp">
+      <Filter>ソース ファイル\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="Resource\Image\ImageResource.cpp">
+      <Filter>ソース ファイル\Resource\Image</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -127,12 +133,6 @@
     <ClInclude Include="System\Window.h">
       <Filter>ソース ファイル\System</Filter>
     </ClInclude>
-    <ClInclude Include="Resource\ImageResourceManager.h">
-      <Filter>ソース ファイル\Resource</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource\ImageResource.h">
-      <Filter>ソース ファイル\Resource</Filter>
-    </ClInclude>
     <ClInclude Include="Resource\ResourceBase.h">
       <Filter>ソース ファイル\Resource</Filter>
     </ClInclude>
@@ -153,6 +153,12 @@
     </ClInclude>
     <ClInclude Include="Object\Charactor\Player.h">
       <Filter>ソース ファイル\Object\Charactor</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource\Image\ImageResourceManager.h">
+      <Filter>ソース ファイル\Resource\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource\Image\ImageResource.h">
+      <Filter>ソース ファイル\Resource\Image</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

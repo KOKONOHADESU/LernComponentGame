@@ -23,11 +23,15 @@ namespace Resource
 		if (m_imageTable.find(filePath) == m_imageTable.end())
 		{
 			// ない場合
+			
+			// 非同期読み込み設定に変更
+			SetUseASyncLoadFlag(true);
 
 			// 画像リソースを読み込む
 			auto handle = LoadGraph(filePath.c_str());
-			assert(handle != -1);
-			if (handle == -1) 	return nullptr;
+
+			// 同期読み込み設定に変更
+			SetUseASyncLoadFlag(false);
 
 			// インスタンスを生成し、テーブルに保存
 			m_imageTable[filePath] = std::make_unique<Image>(handle, filePath, isEternal);
@@ -39,6 +43,19 @@ namespace Resource
 		// 呼び出し元のクラスが削除された場合、一緒に削除されてデストラクタを呼び出してほしい為、
 		// インスタンスを生成して返す
 		return std::make_unique<Image>(m_imageTable[filePath]->GetHandle(), filePath, isEternal);
+	}
+
+	// 非同期読み込みのハンドルを確認し、読み込みが完了している場合はハンドルが正しいか確認する
+	void ImageManager::CheckAsyncLoadHandle()
+	{
+		// 非同期読み込みが完了しているかチェック
+		for (auto& image : m_imageTable)
+		{
+			// ファイルパスが間違っている場合は-1が返される為、
+			// 本来の使用用途は違うがこの関数で確認する
+			int result = CheckHandleASyncLoad(image.second->GetHandle());
+			assert(result != -1);
+		}
 	}
 
 	// リソースの参照の数を確認し、参照がない場合はリソースを解放する

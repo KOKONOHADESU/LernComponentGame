@@ -4,7 +4,7 @@
 #include "../Application.h"
 #include "../MyDebug/DebugText.h"
 #include "../Util/InputStateManager.h"
-#include "../Resource/ImageResourceManager.h"
+#include "../Resource/Image/ImageResourceManager.h"
 #include <DxLib.h>
 #include <cassert>
 

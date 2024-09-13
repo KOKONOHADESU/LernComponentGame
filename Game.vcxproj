@@ -161,8 +161,8 @@
     <ClCompile Include="Object\ObjectBase.cpp" />
     <ClCompile Include="Object\Charactor\Player.cpp" />
     <ClCompile Include="Resource\ResourceBase.cpp" />
-    <ClCompile Include="Resource\ImageResource.cpp" />
-    <ClCompile Include="Resource\ImageResourceManager.cpp" />
+    <ClCompile Include="Resource\Image\ImageResource.cpp" />
+    <ClCompile Include="Resource\Image\ImageResourceManager.cpp" />
     <ClCompile Include="Scene\LoadScene.cpp" />
     <ClCompile Include="Scene\TestScene.cpp" />
     <ClCompile Include="Scene\StageSelectScene.cpp" />
@@ -182,8 +182,8 @@
     <ClInclude Include="Component\ComponentBase.h" />
     <ClInclude Include="Object\Charactor\Player.h" />
     <ClInclude Include="Resource\ResourceBase.h" />
-    <ClInclude Include="Resource\ImageResource.h" />
-    <ClInclude Include="Resource\ImageResourceManager.h" />
+    <ClInclude Include="Resource\Image\ImageResource.h" />
+    <ClInclude Include="Resource\Image\ImageResourceManager.h" />
     <ClInclude Include="Scene\LoadScene.h" />
     <ClInclude Include="Scene\TestScene.h" />
     <ClInclude Include="Scene\StageSelectScene.h" />

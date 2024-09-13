@@ -41,7 +41,6 @@ namespace Scene
 		/// </summary>
 		void Draw() override final;
 
-	private:
 		// ƒ[ƒh‰æ–Ê‚ª•\¦‚³‚ê‚Ä‚¢‚éŠÔ
 		int m_time;
 

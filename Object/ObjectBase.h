@@ -22,7 +22,7 @@ namespace Object
 		/// <summary>
 		/// デストラクタ
 		/// </summary>
-		virtual ~Base();
+		virtual ~Base(){}
 
 		/// <summary>
 		/// 初期化
